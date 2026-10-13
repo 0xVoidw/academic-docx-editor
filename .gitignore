@@ -1,0 +1,16 @@
+.venv/
+.deps/
+.test-tmp*/
+.test-install-root/
+.test-pdf-render/
+.test-e2e/
+.test-pip-tmp/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+tests/fixtures/generated/
+*.bak.docx
+*.manifest.json

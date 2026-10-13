@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "academic-docx-editor"
+version = "1.0.0"
+description = "Auditable, conservative academic DOCX editing with optional Microsoft Word integration"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["lxml>=5,<7", "python-docx>=1.1,<2"]
+
+[project.optional-dependencies]
+word = ["pywin32>=306; platform_system == 'Windows'"]
+pdf = ["PyMuPDF>=1.24,<2", "Pillow>=10,<13"]
+figures = ["matplotlib>=3.8,<4", "graphviz>=0.20,<1"]
+test = ["pytest>=8,<10", "Pillow>=10,<13", "PyMuPDF>=1.24,<2"]
+all = ["pywin32>=306; platform_system == 'Windows'", "PyMuPDF>=1.24,<2", "Pillow>=10,<13", "matplotlib>=3.8,<4", "graphviz>=0.20,<1", "pytest>=8,<10"]
+
+[project.scripts]
+academic-docx-editor = "academic_docx_editor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["word_com: requires installed Word and pywin32", "pdf: requires Word and PyMuPDF"]

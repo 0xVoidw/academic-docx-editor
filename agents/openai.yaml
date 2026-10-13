@@ -1,0 +1,4 @@
+interface:
+  display_name: "Academic DOCX Editor"
+  short_description: "Safely audit and revise academic Word manuscripts"
+  default_prompt: "Use $academic-docx-editor to audit this manuscript and make the requested edits safely."
